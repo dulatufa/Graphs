@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>aardvark: /home/drseth/CPTR227/doxygen-cmake-github/src/main.cpp Source File</title>
+<title>garaph: /home/bona/CPTR227/Graphs/src/main.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">aardvark
-   &#160;<span id="projectnumber">0.3.0</span>
+   <div id="projectname">garaph
+   &#160;<span id="projectnumber">0.1.0</span>
    </div>
   </td>
  </tr>
@@ -72,19 +72,121 @@ $(function() {
 <div class="contents">
 <a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="main_8cpp.html#aa99823a0fc8313c9c32541ce768fb801">   21</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#aa99823a0fc8313c9c32541ce768fb801">add</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span>(a + b);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">   26</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">main</a>(<span class="keywordtype">int</span>, <span class="keywordtype">char</span>**) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Hello, world! Ver 2.1\n&quot;</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classgraph.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgraph.html">graph</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classgraph.html#a649b38b5adbe1d8c806958273e53ca17">   15</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classgraph.html#a649b38b5adbe1d8c806958273e53ca17">B</a>;   </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classgraph.html#a4eb14ae4315a4a1697f33dc4b74039d7">   16</a></span>&#160;   <span class="keywordtype">int</span> TheMatrix[7][7] = {0};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classgraph.html#a1d59258c775889c22034635ea621965b">   18</a></span>&#160;   <a class="code" href="classgraph.html#a1d59258c775889c22034635ea621965b">graph</a>(<span class="keywordtype">int</span> input) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;       B = input;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classgraph.html#a4b45f576edb6e1e5794001db748d3a7a">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgraph.html#a4b45f576edb6e1e5794001db748d3a7a">addEdge</a>(<span class="keywordtype">int</span> O, <span class="keywordtype">int</span> E) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   TheMatrix[O][E] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classgraph.html#a881b5a7b9bd18e13d1fb33fdbda348f4">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgraph.html#a881b5a7b9bd18e13d1fb33fdbda348f4">removeEdge</a>(<span class="keywordtype">int</span> O, <span class="keywordtype">int</span> E) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   TheMatrix[O][E] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classgraph.html#a0a017f81732ae7e918abb7df25e5feb4">   28</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgraph.html#a0a017f81732ae7e918abb7df25e5feb4">hasEdge</a>(<span class="keywordtype">int</span> O, <span class="keywordtype">int</span> j) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordflow">return</span> TheMatrix[O][j];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classgraph.html#a8c92cd9febf7b1b01301d54ddea8de41">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgraph.html#a8c92cd9febf7b1b01301d54ddea8de41">displayM</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> O = 0; O &lt; B; O++) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;       <span class="keywordflow">for</span>(<span class="keywordtype">int</span> E = 0; E &lt; B; E++) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;           cout &lt;&lt; TheMatrix[O][E];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;       }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;       cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classgraph.html#a6a757d0dee918d7e7595d4fe0e7911f1">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgraph.html#a6a757d0dee918d7e7595d4fe0e7911f1">outEdges</a>(<span class="keywordtype">int</span> O, vector&lt;int&gt; &amp;edges) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> E = 0; E &lt; B; E++)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;       <span class="keywordflow">if</span> (TheMatrix[E][O]) edges.push_back(E);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classgraph.html#a832167be9ee7a004b92b461b334a6c19">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgraph.html#a832167be9ee7a004b92b461b334a6c19">inEdges</a>(<span class="keywordtype">int</span> O, vector&lt;int&gt; &amp;edges) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> E = 0; E &lt; B; E++)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;       <span class="keywordflow">if</span> (TheMatrix[O][E]) edges.push_back(E);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classgraph.html#aed8c611295c04e2867c65460aabfca05">   48</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classgraph.html#aed8c611295c04e2867c65460aabfca05">nVertices</a>(){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <span class="keywordflow">return</span> B * B;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classgraph.html#a51a1e30ab7a8c219e8f6124ffc7ff44f">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgraph.html#a51a1e30ab7a8c219e8f6124ffc7ff44f">dfs2</a>(<a class="code" href="classgraph.html">graph</a> &amp;g, <span class="keywordtype">int</span> r) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   <span class="keywordtype">bool</span> *f = <span class="keyword">new</span> <span class="keywordtype">bool</span>[g.<a class="code" href="classgraph.html#aed8c611295c04e2867c65460aabfca05">nVertices</a>()];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   vector&lt;int&gt; s;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   s.push_back(r);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <span class="keywordflow">while</span> (s.size() &gt; 0) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;       <span class="keywordtype">int</span> O = s.back();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;       cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot; &gt; &quot;</span> &lt;&lt; <span class="stringliteral">&quot;This is DFS&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;       s.pop_back();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;       <span class="keywordflow">if</span> (f[O] == *f) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;           f[O] = f;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;           vector&lt;int&gt; edges;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;           g.<a class="code" href="classgraph.html#a6a757d0dee918d7e7595d4fe0e7911f1">outEdges</a>(O, edges);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;           <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; edges.size(); k++)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;               s.push_back(edges[k]);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   <span class="keyword">delete</span>[] f;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//Extra credit</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classgraph.html#a082f598eaae12bb0f79ea5d137243461">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgraph.html#a082f598eaae12bb0f79ea5d137243461">bfs</a>(<a class="code" href="classgraph.html">graph</a> &amp;g, <span class="keywordtype">int</span> r) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   <span class="keywordtype">bool</span> *seen = <span class="keyword">new</span> <span class="keywordtype">bool</span>[g.<a class="code" href="classgraph.html#aed8c611295c04e2867c65460aabfca05">nVertices</a>()];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   vector&lt;int&gt; q;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   q.push_back(r);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;   seen[r] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   <span class="keywordflow">while</span> (q.size() &gt; 0) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;       <span class="keywordtype">int</span> O = q.back();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;       cout &lt;&lt; endl &lt;&lt; O &lt;&lt; <span class="stringliteral">&quot; &gt; &quot;</span> &lt;&lt; <span class="stringliteral">&quot;This is BFS&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;       q.pop_back();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;       vector&lt;int&gt; edges;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;       g.<a class="code" href="classgraph.html#a6a757d0dee918d7e7595d4fe0e7911f1">outEdges</a>(O, edges);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;       <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; edges.size(); k++) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;           <span class="keywordtype">int</span> E = edges[k];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;           <span class="keywordflow">if</span> (!seen[E]) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;               q.push_back(E);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;               seen[E] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">delete</span>[] seen;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">   95</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">main</a>(<span class="keywordtype">int</span>, <span class="keywordtype">char</span>**) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <a class="code" href="classgraph.html">graph</a> value(7);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   value.<a class="code" href="classgraph.html#a4b45f576edb6e1e5794001db748d3a7a">addEdge</a>(3,0);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   value.<a class="code" href="classgraph.html#a4b45f576edb6e1e5794001db748d3a7a">addEdge</a>(6,3);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   value.<a class="code" href="classgraph.html#a8c92cd9febf7b1b01301d54ddea8de41">displayM</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   value.<a class="code" href="classgraph.html#a082f598eaae12bb0f79ea5d137243461">bfs</a>(value, 1);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   value.<a class="code" href="classgraph.html#a881b5a7b9bd18e13d1fb33fdbda348f4">removeEdge</a>(4,4);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   value.<a class="code" href="classgraph.html#a8c92cd9febf7b1b01301d54ddea8de41">displayM</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   value.<a class="code" href="classgraph.html#a4b45f576edb6e1e5794001db748d3a7a">addEdge</a>(1,2);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   value.<a class="code" href="classgraph.html#a4b45f576edb6e1e5794001db748d3a7a">addEdge</a>(2,4);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   value.<a class="code" href="classgraph.html#a0a017f81732ae7e918abb7df25e5feb4">hasEdge</a>(1,2);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   value.<a class="code" href="classgraph.html#a51a1e30ab7a8c219e8f6124ffc7ff44f">dfs2</a>(value, 3);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   value.<a class="code" href="classgraph.html#a8c92cd9febf7b1b01301d54ddea8de41">displayM</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">//value.dfs2(value, 3);</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="amain_8cpp_html_a2c3f6775325c30275d11c6abee2db6a0"><div class="ttname"><a href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">main</a></div><div class="ttdeci">int main(int, char **)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aa99823a0fc8313c9c32541ce768fb801"><div class="ttname"><a href="main_8cpp.html#aa99823a0fc8313c9c32541ce768fb801">add</a></div><div class="ttdeci">int add(int a, int b)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00021">main.cpp:21</a></div></div>
+<div class="ttc" id="aclassgraph_html_a0a017f81732ae7e918abb7df25e5feb4"><div class="ttname"><a href="classgraph.html#a0a017f81732ae7e918abb7df25e5feb4">graph::hasEdge</a></div><div class="ttdeci">bool hasEdge(int O, int j)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00028">main.cpp:28</a></div></div>
+<div class="ttc" id="aclassgraph_html"><div class="ttname"><a href="classgraph.html">graph</a></div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00013">main.cpp:13</a></div></div>
+<div class="ttc" id="aclassgraph_html_a6a757d0dee918d7e7595d4fe0e7911f1"><div class="ttname"><a href="classgraph.html#a6a757d0dee918d7e7595d4fe0e7911f1">graph::outEdges</a></div><div class="ttdeci">void outEdges(int O, vector&lt; int &gt; &amp;edges)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00040">main.cpp:40</a></div></div>
+<div class="ttc" id="aclassgraph_html_a649b38b5adbe1d8c806958273e53ca17"><div class="ttname"><a href="classgraph.html#a649b38b5adbe1d8c806958273e53ca17">graph::B</a></div><div class="ttdeci">int B</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00015">main.cpp:15</a></div></div>
+<div class="ttc" id="aclassgraph_html_aed8c611295c04e2867c65460aabfca05"><div class="ttname"><a href="classgraph.html#aed8c611295c04e2867c65460aabfca05">graph::nVertices</a></div><div class="ttdeci">int nVertices()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00048">main.cpp:48</a></div></div>
+<div class="ttc" id="aclassgraph_html_a881b5a7b9bd18e13d1fb33fdbda348f4"><div class="ttname"><a href="classgraph.html#a881b5a7b9bd18e13d1fb33fdbda348f4">graph::removeEdge</a></div><div class="ttdeci">void removeEdge(int O, int E)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00025">main.cpp:25</a></div></div>
+<div class="ttc" id="aclassgraph_html_a4b45f576edb6e1e5794001db748d3a7a"><div class="ttname"><a href="classgraph.html#a4b45f576edb6e1e5794001db748d3a7a">graph::addEdge</a></div><div class="ttdeci">void addEdge(int O, int E)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00022">main.cpp:22</a></div></div>
+<div class="ttc" id="aclassgraph_html_a082f598eaae12bb0f79ea5d137243461"><div class="ttname"><a href="classgraph.html#a082f598eaae12bb0f79ea5d137243461">graph::bfs</a></div><div class="ttdeci">void bfs(graph &amp;g, int r)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00073">main.cpp:73</a></div></div>
+<div class="ttc" id="aclassgraph_html_a8c92cd9febf7b1b01301d54ddea8de41"><div class="ttname"><a href="classgraph.html#a8c92cd9febf7b1b01301d54ddea8de41">graph::displayM</a></div><div class="ttdeci">void displayM()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00031">main.cpp:31</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a2c3f6775325c30275d11c6abee2db6a0"><div class="ttname"><a href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">main</a></div><div class="ttdeci">int main(int, char **)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00095">main.cpp:95</a></div></div>
+<div class="ttc" id="aclassgraph_html_a832167be9ee7a004b92b461b334a6c19"><div class="ttname"><a href="classgraph.html#a832167be9ee7a004b92b461b334a6c19">graph::inEdges</a></div><div class="ttdeci">void inEdges(int O, vector&lt; int &gt; &amp;edges)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00044">main.cpp:44</a></div></div>
+<div class="ttc" id="aclassgraph_html_a51a1e30ab7a8c219e8f6124ffc7ff44f"><div class="ttname"><a href="classgraph.html#a51a1e30ab7a8c219e8f6124ffc7ff44f">graph::dfs2</a></div><div class="ttdeci">void dfs2(graph &amp;g, int r)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00053">main.cpp:53</a></div></div>
+<div class="ttc" id="aclassgraph_html_a1d59258c775889c22034635ea621965b"><div class="ttname"><a href="classgraph.html#a1d59258c775889c22034635ea621965b">graph::graph</a></div><div class="ttdeci">graph(int input)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00018">main.cpp:18</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
